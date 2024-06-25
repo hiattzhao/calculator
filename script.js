@@ -96,7 +96,7 @@ function operate(operation, operand1, operand2) {
         default:
             break;
     }
-    if (result) { // If the result is truthy
+    if (typeof result === "number") { // If the result is truthy
         return Math.round(result * 1000)/1000; // Return the result to the thousandth decimal place
     }
     return result; // Result could be undefined
@@ -118,7 +118,7 @@ function divide(a, b) {
     if (b !== 0) {
         return a / b;
     } else {
-        return "Can't divide by 0";
+        return "Can't compute";
     }
     
 }
@@ -127,6 +127,6 @@ function modulo(a, b) {
     if (b !== 0) {
         return a % b;
     } else {
-        return "Can't divide by 0";
+        return "Can't compute";
     }
 }
