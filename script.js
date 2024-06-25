@@ -23,7 +23,6 @@ buttons.forEach(btn => btn.addEventListener("click", (e) => {
             expressionPanel.textContent = numberPanel.textContent += operator;
         }
 
-
         numberPanel.textContent = "";
         firstOperand = Number(expressionPanel.textContent.slice(0, -1));
     }
@@ -96,7 +95,7 @@ function operate(operation, operand1, operand2) {
         default:
             break;
     }
-    if (typeof result === "number") { // If the result is truthy
+    if (typeof result === "number") { // If the result is a number
         return Math.round(result * 1000)/1000; // Return the result to the thousandth decimal place
     }
     return result; // Result could be undefined
